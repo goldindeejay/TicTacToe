@@ -1,0 +1,306 @@
+/* Globale Stile für das gesamte Dokument */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Farbvariablen definieren */
+:root {
+    --primary-color-background: rgb(12, 12, 66);
+    --secondary-color-background: #ffffff;
+    --white-color: white;
+}
+
+/* Setze den Hintergrundfarbstil für den gesamten Körper */
+body {
+    background: linear-gradient(45deg, #3498db, #031018); /* Blauer Verlauf von rechts oben nach unten links */
+    color: var(--white-color);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Weißer Text und Schriftart für den Inhalt */
+h1, h2, button, label, input {
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Stile für die Zellen im Spielbrett */
+.cell {
+    width: 75px;
+    height: 75px;
+    border: 2px solid var(--secondary-color-background);
+    box-shadow: 0 0 0 2px var(--secondary-color-background);
+    line-height: 75px;
+    font-size: 45px;
+    cursor: pointer;
+    color: var(--white-color); /* Weiße Schriftfarbe für die Zellen */
+}
+
+/* Stile für die Gewinnerzellen */
+.cell.winner {
+    background-color: green;
+}
+
+/* Abgerundete Ecken für bestimmte Zellen */
+.cell-0 {
+    border-radius: 15px 0 0 0;
+}
+
+.cell-2 {
+    border-radius: 0 15px 0 0;
+}
+
+.cell-6 {
+    border-radius: 0 0 0 15px;
+}
+
+.cell-8 {
+    border-radius: 0 0 15px 0;
+}
+
+/* Container für das Spielbrett. Standardmäßig ausgeblendet.*/
+.main-container {
+    text-align: center;
+    color: var(--white-color); /* Weiße Schriftfarbe für den Text im Container */
+}
+
+/* Container für das Spielbrett */
+.game-container {
+    display: none;
+}
+
+/* Aktivierter Spielcontainer wird angezeigt */
+.game-container.active {
+    display: block;
+}
+
+/* Rasterlayout für die Zellen */
+.cell-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 225px;
+    margin: 70px auto auto;
+}
+
+/* Stile für den Header/Überschrift*/
+.game-title {
+    margin: 50px 0;
+    font-size: 45px;
+    color: var(--white-color); /* Weiße Schriftfarbe für den Titel */
+}
+
+/* Muster für den Spielnamen "TicTacToe" im Spielfeld */
+.game-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.game-title div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #296093;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Farben für jeden Buchstaben */
+.game-title div:nth-child(1) { background-color: #296093; color: #ffffff; } /* T */
+.game-title div:nth-child(2) { background-color: #296093; color: #000000; } /* I */
+.game-title div:nth-child(3) { background-color: #296093; color: #ffffff; } /* C */
+.game-title div:nth-child(4) { background-color: #296093; color: #000000; } /* T */
+.game-title div:nth-child(5) { background-color: #296093; color: #ffffff; } /* A */
+.game-title div:nth-child(6) { background-color: #296093; color: #000000; } /* C */
+.game-title div:nth-child(7) { background-color: #296093; color: #ffffff; } /* T */
+.game-title div:nth-child(8) { background-color: #296093; color: #000000; } /* O */
+.game-title div:nth-child(9) { background-color: #296093; color: #ffffff; } /* E */
+
+
+
+/* Stile für den Status-Text */
+.status-text {
+    margin-top: 30px;
+    font-size: 20px;
+    color: var(--white-color); /* Weiße Schriftfarbe für den Status-Text */
+}
+
+/* Stile für den Neustart-Button */
+.restart-button {
+    margin: 20px 0;
+    background-color: inherit;
+    padding: 5px 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: var(--white-color); /* Weiße Schriftfarbe für den Status-Text */
+}
+
+/* Hover-Effekt für den Neustart-Button */
+.restart-button:hover {
+    background-color: var(--secondary-color-background);
+    color: var(--primary-color-background);
+}
+
+/* Container für den Spielmodus */
+.mode-container {
+    margin-top: 60px;
+}
+
+/*Stil für Eingabemaske Spieler-Name*/
+.player-names-container {
+    background-color: #296093;
+    color: #333;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Stile für die Eingabefelder */
+.player-names-container input {
+    margin-bottom: 8px;
+    padding: 6px;
+    border: 1px solid #0d0d0d;
+    border-radius: 4px;
+    color: #000;
+}
+
+/*Hover-Effekt für Spieler-Name*/
+.player-names-container:hover {
+    background-color: #828387;
+}
+
+/* Optional: Hover-Effekte für die Eingabefelder */
+.player-names-container input:hover {
+    border-color: #090909;
+}
+
+
+/* Aktiver Modecontainer wird nicht angezeigt */
+.mode-container.active {
+    display: none;
+}
+
+/* Container für die Schwierigkeitsstufen. Standardmäßig ausgeblendet. */
+.difficulty-container {
+    margin-top: 10px;
+    display: none;
+}
+
+/* Aktiver Container für Schwierigkeitsstufen wird angezeigt */
+.difficulty-container.active {
+    display: block;
+}
+
+/* Stile für Buttons allgemein */
+.difficulty-button,
+.mode-button,
+.symbol-button,
+.play-button {
+    text-transform: uppercase;
+    background-color: inherit;
+    margin: 10px 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(55, 68, 193, 0.1);
+    color: var(--white-color); /* Weiße Schriftfarbe für den Status-Text */
+}
+
+/* Hover- und aktive Stile für Buttons */
+.difficulty-button.hover,
+.mode-button:hover,
+.symbol-button:hover,
+.difficulty-button.active,
+.mode-button.active,
+.symbol-button.active {
+    background-color: var(--secondary-color-background);
+    color: var(--primary-color-background);
+}
+
+/* Stile für Buttons mit Fehler*/
+.difficulty-button.err,
+.mode-button.err,
+.symbol-button.err,
+.play-button.err{
+    border: 2px solid red;
+}
+
+/* Stile für den Schwierigkeitsbutton */
+.difficulty-button {
+    background-color: inherit;
+    color: #fff;
+    margin: 4px 0;
+}
+
+/* Hover-Effekt für den Schwierigkeitsbutton */
+.difficulty-button:hover {
+    color: var(--primary-color-background);
+    background-color: var(--secondary-color-background);
+}
+
+/* Stile für den Start-Button */
+.play-button {
+    background-color: var(--secondary-color-background);
+    color: var(--primary-color-background);
+    padding: 5px 110px;
+    margin: 30px 0;
+    font-size: 18px;
+}
+
+/* Hover-Effekt für den Start-Button */
+.play-button:hover {
+    color: var(--secondary-color-background);
+    background-color: var(--primary-color-background);
+}
+
+/* Stile für den Menü-Button */
+.menu-button {
+    margin: 20px 0;
+    background-color: inherit;
+    padding: 5px 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Hover-Effekt für den Menü-Button */
+.menu-button:hover {
+    background-color: var(--secondary-color-background);
+    color: var(--primary-color-background);
+}
+
+/* Stile für den Container der Spielerpunkte */
+.scores-container {
+    margin-top: 20px;
+}
+
+/* Stile für die Spielerpunkte */
+.scores-text {
+    font-size: 18px;
+    margin-top: 10px;
+    color: var(--secondary-color-background);
+    display: block; /* Standardmäßig ausgeblendet */
+}
+
+/* Stile für den Fehler-Text */
+.error-text {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

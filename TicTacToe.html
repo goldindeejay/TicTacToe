@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <!-- Meta-Tags für Zeichenkodierung, Kompatibilität und Ansicht -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Verknüpfung mit dem externen Stylesheet -->
+    <link rel="stylesheet" href="TicTacToeStyles.css">
+
+    <!-- Seitentitel -->
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+<!-- Hauptcontainer für die Seite -->
+<div class="main-container">
+    <!-- Überschrift des Spiels -->
+    <!-- Überschrift des Spiels -->
+<h1 class="game-title">
+    <div>T</div>
+    <div>I</div>
+    <div>C</div>
+    <div>T</div>
+    <div>A</div>
+    <div>C</div>
+    <div>T</div>
+    <div>O</div>
+    <div>E</div>
+</h1>
+
+    <!-- Container für den Spielmodus -->
+    <div class="mode-container">
+        <h2>Spiele gegen</h2>
+
+        <!-- Buttons für den Spielmodus (Computer oder Mensch) -->
+        <div class="playMode">
+            <button class="mode-button" id="computer">Computer</button>
+            <button class="mode-button" id="human">Mensch</button>
+        </div>
+
+        <!-- Container für die Spieler-Namen (standardmäßig ausgeblendet) -->
+        <div id="playerNamesContainer" class="player-names-container" style="display: none;">
+            <label for="player1">Spieler 1 Name:</label>
+            <input type="text" id="player1" placeholder="Enter Player 1 Name">
+    
+            <label for="player2">Spieler 2 Name:</label>
+            <input type="text" id="player2" placeholder="Enter Player 2 Name">
+            </div>
+
+        <!-- Container für die Schwierigkeitsstufen -->
+        <div class="difficulty-container">
+            <h2>Schwierigkeitsstufe</h2>
+
+            <!-- Buttons für die Schwierigkeitsstufen -->
+            <button class="difficulty-button" id="easy">Einfach</button>
+            <button class="difficulty-button" id="middle">Mittel</button>
+            <button class="difficulty-button" id="hard">Schwer</button>
+        </div>
+
+        <!-- Container für die Spielsymbole (X oder O) -->
+        <div class="symbols">
+            <h2>Symbol</h2>
+
+            <!-- Buttons für die Spielsymbole (X oder O) -->
+            <button class="symbol-button" id="x">X</button>
+            <button class="symbol-button" id="o">O</button>
+        </div>
+
+        <!-- Button zum Starten des Spiels -->
+        <button class="play-button">Starte das Spiel</button>
+        <!-- Fehler-Text für den Play-Button -->
+        <div class="error-text" id="error-text"></div>
+    </div>
+
+    <!-- Container für das eigentliche Spiel -->
+    <div class="game-container">
+
+        <!-- Rasterlayout für die Spielzellen -->
+        <div class="cell-container">
+            <div class="cell cell-0" id="0"></div>
+            <div class="cell" id="1"></div>
+            <div class="cell cell-2" id="2"></div>
+            <div class="cell" id="3"></div>
+            <div class="cell" id="4"></div>
+            <div class="cell" id="5"></div>
+            <div class="cell cell-6" id="6"></div>
+            <div class="cell" id="7"></div>
+            <div class="cell cell-8" id="8"></div>
+        </div>
+
+        <!-- Anzeige für den Spielstatus -->
+        <div class="status-text"></div>
+
+        <!-- Anzeige für die Spielergebnisse -->
+        <div class="scores-container">
+            <div class="scores-text" id="scores-text"></div>
+        </div>
+
+        <!-- Button zum Neustarten des Spiels -->
+        <button class="restart-button">Restart</button>
+
+        <!-- Button für das Menü -->
+        <button class="menu-button">Menu</button>
+    </div>
+</div>
+
+<!--&lt;!&ndash; Einbindung des externen JavaScript-Codes &ndash;&gt;-->
+<!--<script src="gameLogic.js"></script>-->
+
+<!--&lt;!&ndash; Einbindung des externen JavaScript-Codes &ndash;&gt;-->
+<!--<script src="main.js"></script>-->
+
+<!--&lt;!&ndash; Einbindung des externen JavaScript-Codes &ndash;&gt;-->
+<!--<script src="Ui.js"></script>-->
+
+<!-- Einbindung des externen JavaScript-Codes -->
+<script src="TicTacToeLogic.js"></script>
+</body>
+
+</html>
